@@ -1,0 +1,36 @@
+.global-title {
+  font-size: clamp(var(--t-xxl-2), 3vw, 3rem);
+  font-weight: 700;
+  color: rgba(var(--cl-b), 1);
+  text-transform: uppercase;
+  letter-spacing: .96px;
+  text-align: center;
+  line-height: 120%;
+}
+.global-text {
+  letter-spacing: -.38px;
+  color: #24492D;
+  font-weight: 500;
+  font-size: var(--t-md);
+  @include laptop {
+    font-size: var(--t-base);
+  }
+  @include mobile {
+    font-size: var(--t-sm);
+  }
+}
+.button {
+  @include dfc;
+  min-height: 42px;
+  text-align: center;
+  padding: 0 2.875rem;
+  background-color: rgba(var(--cl-w), 1);
+  border-radius: 4px;
+  &-text {
+    font-size: var(--t-sm);
+    font-weight: 500;
+    color: rgba(36, 73, 45, 0.91);
+    text-transform: uppercase;
+    letter-spacing: .28px;
+  }
+}

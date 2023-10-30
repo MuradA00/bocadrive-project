@@ -1,0 +1,78 @@
+// --------------- hex to rgba mixin ---------------
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+:root {
+// --------------- default global variable ---------------
+  --body-font-size: 16px;
+  --content-width: 1184px;
+  --content-width-mode: 1214px;
+  --container-offset: 15px;
+  --container-w: 1184px;
+  --delay-transition: cubic-bezier(.25,.75,.5,1.25);
+// --------------- default JS variable ---------------
+// --------------- default JS tablet variable ---------------
+// --------------- default JS small-tablet variable ---------------
+// --------------- font - sizes -------------------------
+--t-xxs: 10px;
+--t-xs: 12px;
+--t-sm: 14px;
+--t-base: 16px;
+--t-md: 18px;
+--t-lg: 20px;
+--t-xl: 24px;
+--t-xxl: 26px;
+--t-xxl-2: 28px;
+--t-xxl-3: 32px;
+--t-xxl-4: 36px;
+// --------------- default scroll variable ---------------
+// --------------- default slect variable ---------------
+// --------------- default font-family variable ---------------
+  --ff: 'Inter Tight', sans-serif;
+// --------------- default text color variable ---------------
+  // --burger-cl: #{HexToRGB(#00d655)};
+  --cl-w: #{HexToRGB(#ffffff)};
+  --cl-b: #{HexToRGB(#000000)};
+  --cl-dark: #{HexToRGB(#303030)};
+  --cl-semi: #{HexToRGB(#F2F2F2)};
+  --cl-semi-dark: #{HexToRGB(#F5F5F7)};
+  --cl-grn: #{HexToRGB(#24492D)};
+  --cl-yl: #{HexToRGB(#BD945C)};
+// --------------- default background cl variable ------------
+// --------------- default border cl variable ----------------
+// --------------- gradient background cl variable -----------
+// ---------------default background modal variable-----------
+}
+
+@media only screen and (max-width: 1320px) {
+  :root {
+    --root-sidebar-w: 96px;
+    --root-main-content-px: 1.5rem;
+  }
+}
+@media only screen and (max-width: 1624px) {
+  :root {
+    --root-main-content-px: 2rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  :root {
+    --root-sidebar-w: 48px !important;
+    --root-main-content-px: 1rem !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  :root {
+    --root-icon-ratio: 1.25rem;
+    --root-main-content-px: 1rem;
+    --root-main-content-px: 0.75rem !important;
+  }
+}
+
+.sidebar-dynamic {
+  --root-sidebar-w: 96px !important;
+
+  @media only screen and (max-width: 1320px) {
+    --root-sidebar-w: 300px !important;
+  }
+}
