@@ -7,7 +7,66 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-attachment: fixed;
+
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    background: rgba(21, 36, 23, 0.88);
+    min-height: clamp(360px, 30vw, 480px);
+    width: 60%;
+    left: 0;
+    top: 4.625rem;
+    backdrop-filter: blur(1rem);
+    pointer-events: none;
+    @include small-tablet {
+      width: 100%;
+    }
+  }
   @include mobile {
     background-attachment: initial;
+  }
+  &-container {
+    height: 100%;
+    --container-offset: 3rem;
+  }
+  &-title {
+    text-align: left;
+    color: rgba(var(--cl-w), 1);
+  }
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1.5rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: clamp(100px, 10.625vw, 170px) 0 0 0;
+  }
+  &-button {
+    width: fit-content;
+  }
+}
+
+@include small-tablet {
+  .banner {
+    &-container {
+      --container-offset: 1rem;
+    }
+    &-title {
+      text-align: center;
+    }
+    &-inner {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@include mobile {
+  .banner {
+    &-button {
+      width: 100%;
+    }
   }
 }

@@ -24,13 +24,23 @@
   min-height: 42px;
   text-align: center;
   padding: 0 2.875rem;
-  background-color: rgba(var(--cl-w), 1);
-  border-radius: 4px;
+  background-image: url('../../img/sprite/button-overlay.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: 300ms ease;
   &-text {
     font-size: var(--t-sm);
     font-weight: 500;
     color: rgba(36, 73, 45, 0.91);
     text-transform: uppercase;
     letter-spacing: .28px;
+  }
+}
+
+.section-spacing {
+  padding: 3rem 0;
+  @include mobile {
+    padding: 2.5rem 0;
   }
 }
