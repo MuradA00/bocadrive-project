@@ -1,4 +1,6 @@
 .banner {
+  --banner-h: clamp(360px, 30vw, 480px);
+
   height: 100vh;
   min-height: 400px;
   padding: 4.625rem 0 4.625rem;
@@ -13,7 +15,7 @@
   &::after {
     @include pseudo;
     background: rgba(21, 36, 23, 0.88);
-    min-height: clamp(360px, 30vw, 480px);
+    min-height: var(--banner-h);
     width: 60%;
     left: 0;
     top: 4.625rem;
@@ -36,12 +38,13 @@
   }
   &-inner {
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    min-height: var(--banner-h);
     grid-gap: 1.5rem;
     text-align: left;
     position: relative;
     z-index: 1;
-    padding: clamp(100px, 10.625vw, 170px) 0 0 0;
   }
   &-button {
     width: fit-content;
