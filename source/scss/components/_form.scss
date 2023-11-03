@@ -1,0 +1,110 @@
+.form {
+  &-header {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1.5rem;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #D9D9D9;
+    text-align: center;
+  }
+  &-submit {
+    min-width: 184px;
+  }
+  &-grid {
+    margin-bottom: .5rem;
+  }
+  &-message {
+    width: 100%;
+    grid-column: span 2;
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 2px;
+      background-color: #F2F2F2;
+      resize: none;
+      min-height: 240px;
+      font-size: clamp(var(--t-base), 1.125vw, var(--t-md));
+      color: rgba(var(--cl-grn), 1);
+      font-weight: 500;
+      line-height: 144%;
+      letter-spacing: -0.36px;
+      border-radius: 2px;
+      font-family: var(--ff);
+      &::placeholder {
+        color: rgba(var(--cl-grn), 1);
+      }
+    }
+  }
+  &-floor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .5rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  &-box {
+    &__label {
+      color: rgba(var(--cl-grn), 1);
+      font-size: var(--t-sm);
+      font-weight: 500;
+      letter-spacing: -0.28px;
+      margin-bottom: 10px;
+      line-height: 144%;
+
+      span {
+        color: rgba(var(--cl-yl), 1);
+      }
+    }
+  }
+  &-flex {
+    display: flex;
+    align-items: center;
+    grid-gap: .5rem;
+    &__item {
+      flex: 1;
+    }
+  }
+}
+
+@include tablet {
+  .form {
+    &-floor {
+      display: flex;
+      flex-direction: column;
+    }
+    &-message {
+      &__input {
+        min-height: 200px !important;
+      }
+    }
+    &-box {
+      display: flex;
+      flex-direction: column;
+    }
+    &-flex {
+      flex-direction: column;
+      &__item {
+        width: 100%;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+@include mobile {
+  .form {
+    &-submit {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    &-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+}

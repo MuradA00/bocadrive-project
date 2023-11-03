@@ -20,11 +20,13 @@
   }
 }
 .button {
+  --bg: url('../../img/sprite/button-overlay.webp');
+
   @include dfc;
   min-height: 42px;
   text-align: center;
   padding: 0 2.875rem;
-  background-image: url('../../img/sprite/button-overlay.webp');
+  background-image: var(--bg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -35,6 +37,12 @@
     color: rgba(36, 73, 45, 0.91);
     text-transform: uppercase;
     letter-spacing: .28px;
+  }
+  &--green {
+    --bg: url('../../img/sprite/button-overlay-green.webp');
+    .button-text {
+      color: rgba(var(--cl-w), 1);
+    }
   }
 }
 
