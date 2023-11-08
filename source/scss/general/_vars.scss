@@ -10,6 +10,8 @@
   --container-offset: 15px;
   --container-w: 1184px;
   --delay-transition: cubic-bezier(.25,.75,.5,1.25);
+  --sections-gutter: 3rem;
+  --banner-spacing: 200px;
 // --------------- default JS variable ---------------
 // --------------- default JS tablet variable ---------------
 // --------------- default JS small-tablet variable ---------------
@@ -63,6 +65,7 @@
 }
 @media only screen and (max-width: 576px) {
   :root {
+    --sections-gutter: 2rem;
     --root-icon-ratio: 1.25rem;
     --root-main-content-px: 1rem;
     --root-main-content-px: 0.75rem !important;

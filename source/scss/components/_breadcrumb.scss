@@ -1,0 +1,31 @@
+.breadcrumb {
+  display: flex;
+  grid-gap: 0 10px;
+  padding: clamp(1.5rem, 2vw, 2rem) 0;
+  display: flex;
+  align-items: center;
+  color: #152417;
+  font-size: clamp(var(--t-base), 1.125vw, var(--t-md));
+  text-transform: uppercase;
+  letter-spacing: -.36px;
+  font-weight: 500;
+  flex-wrap: wrap;
+  @include laptop {
+    grid-gap: 0 0.5rem;
+  }
+  &-item {
+    a {
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+    &--grey {
+      opacity: .4;
+    }
+    &--active {
+      a {
+        color: rgba(var(--cl-yl), 1);
+      }
+    }
+  }
+}

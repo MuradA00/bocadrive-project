@@ -1,9 +1,9 @@
 .banner {
   --banner-h: clamp(360px, 30vw, 480px);
+  --banner-spacing: 72px;
 
-  height: 100vh;
-  min-height: 400px;
-  padding: 4.625rem 0 4.625rem;
+  min-height: 940px;
+  padding: var(--banner-spacing) 0 4.625rem;
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,13 +12,53 @@
 
   position: relative;
 
+  &-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 334px;
+    width: 560px;
+    border: 1px solid rgba(var(--cl-semi-dark),1);
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @include laptop {
+      width: 400px;
+      height: 250px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  &--short {
+    background-color: #152417;
+    --banner-spacing: 0 !important;
+
+    height: auto !important;
+    min-height: 480px !important;
+    padding: 0;
+    justify-content: center;
+
+    &::after {
+      display: none;
+    }
+    @include mobile {
+      @include dfc;
+    }
+  }
+
   &::after {
     @include pseudo;
     background: rgba(21, 36, 23, 0.88);
     min-height: var(--banner-h);
     width: 60%;
     left: 0;
-    top: 4.625rem;
+    top: var(--banner-spacing);
     backdrop-filter: blur(1rem);
     pointer-events: none;
     @include small-tablet {
@@ -28,13 +68,78 @@
   @include mobile {
     background-attachment: initial;
   }
+  &--longer {
+    &::after {
+      display: none;
+    }
+    height: auto !important;
+    min-height: 480px !important;
+    padding: 44px 0;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(21,36,23,1) 72%, rgba(var(--cl-w),1) 72%);
+    @include tablet {
+      background: #152417;
+    }
+    .banner {
+      &-inner {
+        max-width: 750px;
+        @include laptop {
+          max-width: 400px;
+        }
+        @include tablet {
+          max-width: 100%;
+        }
+      }
+    }
+  }
   &-container {
     height: 100%;
     --container-offset: 3rem;
   }
+  &-row {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    flex-wrap: wrap;
+    &__item {
+      color: rgba(var(--cl-yl), 1);
+      font-size: clamp(var(--t-base), 1.125vw, var(--t-md));
+      text-transform: uppercase;
+      letter-spacing: -.36px;
+      font-weight: 500;
+    }
+    &__divider {
+      font-size: clamp(var(--t-base), 1.125vw, var(--t-md));
+      text-transform: uppercase;
+      letter-spacing: -.36px;
+      color: rgba(var(--cl-w), 1);
+    }
+  }
   &-title {
     text-align: left;
     color: rgba(var(--cl-w), 1);
+  }
+  &-label {
+    letter-spacing: .64px;
+    line-height: 120%;
+    color: rgba(var(--cl-yl), 1);
+    font-weight: 500;
+    font-size: var(--t-xxl-3);
+    @include laptop {
+      font-size: var(--t-lg);
+    }
+  }
+  &-header {
+    display: flex;
+    flex-direction: column;
+    grid-gap: .5rem;
+    font-size: clamp(var(--t-xl), 2vw, var(--t-xxl-3));
+  }
+  &-description {
+    font-size: clamp(var(--t-sm), 1.125vw, var(--t-md));
+    line-height: 144%;
+    letter-spacing: -.36px;
+    color: rgba(var(--cl-semi), 1);
   }
   &-inner {
     display: flex;
@@ -45,6 +150,7 @@
     text-align: left;
     position: relative;
     z-index: 1;
+    max-width: clamp(400px, 41.875vw, 670px);
   }
   &-button {
     width: fit-content;
@@ -53,19 +159,27 @@
 
 @include small-tablet {
   .banner {
+    --banner-spacing: 60px;
+    min-height: 700px;
     &-container {
       --container-offset: 1rem;
     }
     &-title {
       text-align: center;
     }
+    &-label {
+      text-align: center;
+    }
     &-inner {
       align-items: center;
       justify-content: center;
+      max-width: 100%;
+      & > * {
+        text-align: center;
+      }
     }
   }
 }
-
 @include mobile {
   .banner {
     &-button {

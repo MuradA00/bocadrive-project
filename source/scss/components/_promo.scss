@@ -1,0 +1,25 @@
+.promo {
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // bottom: -120px;
+    margin: -280px 0 0 0 ;
+    width: 100%;
+    &-container {
+      --container-w: 1184px;
+    }
+    &-title {
+      text-align: left;
+    }
+    .box {
+      backdrop-filter: blur(4px);
+    }
+}
+
+@include mobile {
+  .promo {
+    .box {
+      padding: 1rem;
+    }
+  }
+}

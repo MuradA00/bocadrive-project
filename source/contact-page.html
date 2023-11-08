@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="En-en">
+@include('partials/head.html')
+<body>
+  @include('partials/menu.html')
+  @include('partials/header.html')
+  @include('partials/modal.html')
+
+  <nav aria-label="breadcrumbs" class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Home</a>
+      </li>
+      <span class="breadcrumb-divider">/</span>
+      <li class="breadcrumb-item breadcrumb-item--active" aria-current="page">
+        <a href="#">
+          Contact Us
+        </a>
+      </li>
+    </ol>
+  </nav>
+
+  <main class="main--last-spacing">
+
+    <!-- divider -->
+
+    <section class="banner banner--short">
+      <div class="banner-container container">
+        <div class="banner-inner">
+          <h1 class="banner-title global-title global-title--large">
+            CONTACT US
+          </h1>
+          <div class="banner-label">
+            TRUSTED ADDRESS FOR <br> YOUR EUROPEAN AUTO PROBLEMS
+          </div>
+          <button class="banner-button button">
+            <span class="button-text">
+              APPOINTMENT
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="form section-spacing">
+      <div class="form-container container">
+        <div class="form-header">
+          <h1 class="global-title">
+            EXPERIENCE THE DIFFERENCE
+          </h1>
+          <p class="global-text">
+            Visit World Class Auto today and experience first-hand how we bring world-class electrical repair services to the cars we love. When it comes to electrical repairs for your luxury automobile, don’t settle for anything less than World Class. Schedule your appointment today and let us redefine your vehicle’s performance.
+          </p>
+        </div>
+        <form class="form">
+          <div class="form-flex form-flex--stretch">
+            <div class="form-block form-block--flex">
+              <div class="form-grid form-grid--col">
+                <div class="form-floor form-floor--mb">
+                  <div class="form-textarea textarea">
+                    <input type="text" placeholder="First Name" class="textarea-input">
+                  </div>
+                  <div class="form-textarea textarea">
+                    <input type="text" placeholder="First Name" class="textarea-input">
+                  </div>
+                </div>
+                <div class="form-textarea form-textarea--mb textarea">
+                  <input type="email" placeholder="Email" class="textarea-input">
+                </div>
+                <div class="form-textarea form-textarea--mb textarea">
+                  <input type="tel" placeholder="Phone" class="textarea-input">
+                </div>
+                <div class="form-message form-textarea">
+                  <textarea name="" placeholder="Message" class="form-message__input textarea-input"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form-block">
+              <div class="form-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d114899.97723182147!2d-80.23111554436483!3d25.848922857181275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20map!5e0!3m2!1sru!2sua!4v1699418717097!5m2!1sru!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+          <button class="form-submit button button--green modal-trigger" type="submit">
+            <span class="button-text">
+              APPOINTMENT
+            </span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- divider -->
+
+    @include('partials/contact.html')
+
+    <!-- divider -->
+
+  </main>
+  @include('partials/footer.html')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.3/swiper-bundle.min.js" integrity="sha512-ILrDRgEiIojcsKyBy12ZU7MtOf78F2fj3vve/AN5i94iXLQ8PZN7IJYPphmAGdwZmTv4N+OzY3trvqGIEY87VA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

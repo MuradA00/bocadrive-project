@@ -30,14 +30,6 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: rgba(var(--cl-grn), 1);
   }
-  &.fixed-body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    // disable scroll
-  }
 }
 .bg-auth {
   --bg-body-initial: url('../../img/form/bg-form.webp');
@@ -48,8 +40,20 @@ body {
 main {
   flex: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-gap: var(--sections-gutter);
 
-  grid-area: main;
+  & > *:last-child {
+    margin-bottom: 3rem;
+  }
+}
+.main {
+  &--last {
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 .main-content {
   grid-area: main;

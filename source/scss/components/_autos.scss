@@ -1,0 +1,115 @@
+.autos {
+  --image-h: 160px;
+  --grid-gutter: 70px;
+
+  background-color: #142418;
+
+  &-text {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3rem;
+  }
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: var(--grid-gutter);
+    padding: 10px;
+
+    &--short {
+      grid-template-columns: repeat(4, 1fr);
+      --grid-gutter: 40px;
+    }
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    &__info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    &__name {
+      flex: 1;
+      font-size: var(--t-md);
+      font-weight: 500;
+      line-height: 144%;
+      letter-spacing: -0.36px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      @include hide-text(1);
+    }
+    &__link {
+      flex: 1;
+    }
+    &__image {
+      width: 100%;
+      height: var(--image-h);
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 200ms ease;
+      }
+      @include hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  .box {
+    background-color: transparent;
+  }
+  .global-title {
+    text-align: center;
+  }
+  .global-text {
+    text-align: center;
+  }
+  .global-link {
+    color: rgba(var(--cl-yl), 1);
+  }
+}
+@include laptop {
+  .autos {
+    &-inner {
+      grid-gap: 1.5rem;
+    }
+    &-grid {
+      grid-template-columns: repeat(3, 1fr);
+      --grid-gutter: 1.5rem;
+    }
+  }
+}
+
+@include small-tablet {
+  .autos {
+    &-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@include mobile {
+  .autos {
+    --image-h: 150px;
+    &-grid {
+      padding: 0;
+      --grid-gutter: 1rem;
+    }
+  }
+}

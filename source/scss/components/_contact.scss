@@ -3,7 +3,6 @@
   --root-pt: 2rem;
   --root-px: 1.5rem;
 
-  margin-bottom: 3rem;
   &-header {
     text-align: center;
     display: flex;
@@ -135,11 +134,23 @@
     }
   }
 }
-@include mobile {
+@include small-tablet {
   .contact {
+    &-item {
+      min-height: 320px;
+    }
     &-grid {
       display: flex;
       flex-direction: column;
+    }
+    &-table {
+      &__item {
+        span {
+          &:nth-child(2) {
+            text-align: right;
+          }
+        }
+      }
     }
   }
 }

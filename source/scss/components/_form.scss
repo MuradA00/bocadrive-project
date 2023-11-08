@@ -13,6 +13,23 @@
   }
   &-grid {
     margin-bottom: .5rem;
+    &--col {
+      margin-bottom: 0;
+    }
+  }
+  &-textarea {
+    &--mb {
+      margin-bottom: .5rem;
+    }
+  }
+  &-map {
+    width: 100%;
+    height: 100%;
+    iframe {
+      min-height: 400px;
+      width: 100%;
+      height: 100%;
+    }
   }
   &-message {
     width: 100%;
@@ -43,6 +60,9 @@
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
+    &--mb {
+      margin-bottom: .5rem !important;
+    }
   }
   &-box {
     &__label {
@@ -58,10 +78,33 @@
       }
     }
   }
+  &-block {
+    flex: 1;
+    &--flex {
+      display: flex;
+      flex-direction: column;
+
+      .form {
+        &-grid {
+          flex: 1;
+        }
+        &-textarea {
+
+        }
+        &-submit {
+          width: fit-content;
+        }
+      }
+    }
+  }
   &-flex {
     display: flex;
     align-items: center;
     grid-gap: .5rem;
+    &--stretch {
+      margin-bottom: .5rem;
+      align-items: stretch;
+    }
     &__item {
       flex: 1;
     }
